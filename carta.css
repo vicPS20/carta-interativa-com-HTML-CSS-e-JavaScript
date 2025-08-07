@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    touch-action: manipulation;
+    cursor: pointer;
+    display: flex;
+    justify-content:center;
+}
+
+ 
+ .fixed-menssage{
+    position: absolute;
+    top:10%;
+    width: 100%;
+    color: #ff4d4d;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255,0,0,0.6), 0 0 20px
+    rgba(255,0,0,0.4);
+    animation: brilhar 2s ease-in-out infinite alternate, pulsar 2s ease-in-out infinite;
+    text-align: center;
+    z-index: 10;
+ }
+ @keyframes brilhar{
+ 0%{
+    text-shadow:0 0 5px rgba(255,0,0,0.2);
+ }
+ 100%{
+    text-shadow: 0 0 15px rgba(255,0,0,0.8),0 0 30px
+    rgba(255,0,0,0.6);
+ }
+ }
+@keyframes pulsar{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.05);
+    }
+}
+.sorry{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1.2rem;
+    text-shadow: 0 0 6px rgba(255,0,0,0.8);
+    color: rgba(255,0, 0,0.6);
+    animation: cair 5s linear infinite;
+    z-index: 1;
+    pointer-events: none;
+}  
+ @keyframes cair{
+    0%{
+        transform: translateY(-10vh);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+ } 
+@keyframes flutuar{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(15px);
+    }
+}    
+
+.flor{
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    z-index: 5;
+}
+
+
+
+
+
+.word{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50,-50%);
+    color: red;
+    font-size: 2em;
+    font-weight: bold;
+    white-space: nowrap;
+    animation: fadeOut 2s ease-out forwards, Efeito 3s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 10;
+
+}
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+@keyframes Efeito{
+    0%{
+        transform: translate(-50,-50%) scale(1);
+        color: red;
+        text-shadow: 0 0 5px red;
+        
+    }
+    25%{
+        transform: translate(-50,-50%)
+        scale(1.1);
+        color: deeppink;
+        text-shadow: 0 0 10px deeppink;
+    }
+    50%{
+        transform: translate(-50,-50%)
+        scale(1.2);
+        color: hotpink;
+        text-shadow: 0 0 15px hotpink;
+    }
+    75%{
+        transform: translate(-50,-50%)
+        scale(1.1);
+        color: crimson;
+        text-shadow: 0 0 10px crimson;
+    }
+    100%{
+        transform: translate(-50,-50%)scale(1);
+        color: red;
+        text-shadow: 0 0 5px red;
+
+    }
+}
